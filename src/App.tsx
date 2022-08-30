@@ -12,11 +12,20 @@ function App() {
 				<section className="controlArea">
 					<div className="data">
 						<label>Message:</label>
-						<input type="text" value={store.message} onChange={(e) => store.setMessage(e.target.value)} />
+						<input
+							type="text"
+							value={store.message}
+							onChange={(e) => store.setMessage(e.target.value)}
+						/>
+					</div>
+
+					<div className="data">
+						<label>Colors:</label>
+						nnn
 					</div>
 				</section>
 				<section className="dataArea">
-					<InfoBox/>
+					<InfoBox />
 				</section>
 			</main>
 		</div>
