@@ -53,14 +53,28 @@ function App() {
 						>
 							toggle online status
 						</button>
-						<button onClick={() =>
-								store.toggleCurrentUserStatusEmail()
-							}
-						>toggle email status</button>
+						<button
+							onClick={() => store.toggleCurrentUserStatusEmail()}
+						>
+							toggle email status
+						</button>
 					</div>
-					<div className="data">
-						<button disabled={store.techBooksAreLoading} onClick={() => store.loadTechBooks()}>Load Tech Books</button>
-					</div>
+					{store.techBooks.length === 0 && (
+						<div className="data">
+							<button
+								disabled={store.techBooksAreLoading}
+								onClick={() => store.loadTechBooks()}
+							>
+								Load Tech Books
+							</button>
+						</div>
+					)}
+					{store.techBooks.length > 0 && (
+						<div className="data">
+							<label>Search tech books:</label>
+							<input type="text" />
+						</div>
+					)}
 				</section>
 				<section className="dataArea">
 					<InfoBox />
