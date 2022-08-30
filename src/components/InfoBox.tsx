@@ -20,6 +20,12 @@ export const InfoBox = () => {
 					{store.currentUserStatus.isOnline ? 'yes' : 'no'}
 				</span>
 			</div>
+			<div className="row">
+				<label>User's email is confirmed: </label>
+				<span className="theValue">
+					{store.currentUserStatus.emailIsConfirmed ? 'yes' : 'no'}
+				</span>
+			</div>
 		</div>
 	);
 };

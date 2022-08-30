@@ -13,6 +13,7 @@ interface IStore {
 		emailIsConfirmed: boolean;
 	};
 	toggleCurrentUserStatusOnline: () => void;
+	toggleCurrentUserStatusEmail: () => void;
 }
 
 export const useStore = create<IStore>(
@@ -64,6 +65,13 @@ export const useStore = create<IStore>(
 				return _state;
 			});
 		},
+		toggleCurrentUserStatusEmail: () => {
+			set((state) => {
+				const _state = { ...state };
+				_state.currentUserStatus.emailIsConfirmed = !_state.currentUserStatus.emailIsConfirmed;
+				return _state;
+			});
+}
 
 		// CHANGE MULTIPLE STATE VARIABLES
 	})

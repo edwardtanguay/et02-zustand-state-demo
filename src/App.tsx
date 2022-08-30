@@ -46,8 +46,17 @@ function App() {
 					</div>
 
 					<div className="data">
-						<button onClick={() => store.toggleCurrentUserStatusOnline()}>toggle online status</button>
-						<button>toggle email status</button>
+						<button
+							onClick={() =>
+								store.toggleCurrentUserStatusOnline()
+							}
+						>
+							toggle online status
+						</button>
+						<button onClick={() =>
+								store.toggleCurrentUserStatusEmail()
+							}
+						>toggle email status</button>
 					</div>
 				</section>
 				<section className="dataArea">
