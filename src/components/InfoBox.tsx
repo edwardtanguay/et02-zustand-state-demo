@@ -1,4 +1,5 @@
 import { useStore } from '../store';
+import { ImSpinner10 } from 'react-icons/im';
 
 export const InfoBox = () => {
 	const store = useStore((state) => state);
@@ -30,6 +31,9 @@ export const InfoBox = () => {
 			</div>
 			<div className="row">
 				<label>Tech Books:</label>
+				{store.techBooksAreLoading && (
+					<div><ImSpinner10  className="spinner"/></div>
+				)}
 				<ul>
 					{store.techBooks.map((techBook, i) => {
 						return <li key={i}>{techBook.title}</li>;

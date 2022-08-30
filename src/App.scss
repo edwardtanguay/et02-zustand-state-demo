@@ -78,9 +78,10 @@ body {
                         }
     
                         .spinner {
-                            font-size: 2rem;
+                            font-size: 4rem;
                             color: #444;
                             animation: spin infinite 2s linear;
+                            margin-top: 1rem;
                         }
     
                         @keyframes spin {
