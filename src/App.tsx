@@ -59,7 +59,7 @@ function App() {
 						>toggle email status</button>
 					</div>
 					<div className="data">
-						<button onClick={() => store.loadTechBooks()}>Load Tech Books</button>
+						<button disabled={store.techBooksAreLoading} onClick={() => store.loadTechBooks()}>Load Tech Books</button>
 					</div>
 				</section>
 				<section className="dataArea">
