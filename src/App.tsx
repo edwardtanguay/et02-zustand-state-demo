@@ -37,6 +37,11 @@ function App() {
 							delete all colors
 						</button>
 					</div>
+
+					<div className="data">
+						<label>Change multiple values:</label>
+						<button onClick={() => store.deleteVowelsAndRed()}>Delete vowels and color red</button>
+					</div>
 				</section>
 				<section className="dataArea">
 					<InfoBox />
