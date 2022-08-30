@@ -6,6 +6,7 @@ interface IStore {
 	colors: string[];
 	addColor: (color: string) => void;
 	deleteColor: () => void;
+	deleteAllColors: () => void;
 }
 
 export const useStore = create<IStore>(
@@ -25,6 +26,13 @@ export const useStore = create<IStore>(
 			set((state) => {
 				const _state = { ...state };
 				_state.colors.pop();
+				return _state;
+			})
+		},
+		deleteAllColors: () => {
+			set((state) => {
+				const _state = { ...state };
+				_state.colors = [];
 				return _state;
 			})
 		}
