@@ -32,11 +32,21 @@ export const InfoBox = () => {
 			<div className="row">
 				<label>Tech Books:</label>
 				{store.techBooksAreLoading && (
-					<div><ImSpinner10  className="spinner"/></div>
+					<div>
+						<ImSpinner10 className="spinner" />
+					</div>
 				)}
 				<ul>
 					{store.techBooks.map((techBook, i) => {
-						return <li key={i}>{techBook.title}</li>;
+						return (
+							<>
+								{techBook.title
+									.toLowerCase()
+									.includes(
+										store.techBooksSearchText.toLowerCase()
+									) && <li key={i}>{techBook.title}</li>}
+							</>
+						);
 					})}
 				</ul>
 			</div>

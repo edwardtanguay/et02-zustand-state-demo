@@ -27,6 +27,8 @@ interface IStore {
 	techBooks: ITechBook[];
 	loadTechBooks: () => void;
 	techBooksAreLoading: boolean;
+	techBooksSearchText: string;
+	setTechBooksSearchText: (techBooksSearchText: string) => void;
 }
 
 export const useStore = create<IStore>(
@@ -124,5 +126,8 @@ export const useStore = create<IStore>(
 			}, 3000);
 		},
 		techBooksAreLoading: false,
+		techBooksSearchText: '',
+		setTechBooksSearchText: (techBooksSearchText: string) =>
+			set((state) => ({ ...state, techBooksSearchText })),
 	})
 );
