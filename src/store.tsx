@@ -25,6 +25,7 @@ interface IStore {
 	toggleCurrentUserStatusOnline: () => void;
 	toggleCurrentUserStatusEmail: () => void;
 	techBooks: ITechBook[];
+	loadTechBooks: () => void;
 }
 
 export const useStore = create<IStore>(
@@ -92,5 +93,9 @@ export const useStore = create<IStore>(
 
 		// API CALL
 		techBooks: [],
+		loadTechBooks: async () => {
+			const rawTechBooks = (await axios.get(techBooksUrl)).data;
+			
+		}
 	})
 );
