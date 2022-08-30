@@ -98,15 +98,21 @@ export const useStore = create<IStore>(
 			const _techBooks: ITechBook[] = [];
 			rawTechBooks.forEach((rawTechBook: any) => {
 				const techBook: ITechBook = {
-					title: 'ttt',
-					description: 'ddd',
-					language: 'lll',
-					idCode: 'iii'
+					title: rawTechBook.title,
+					description: rawTechBook.description,
+					language:
+						rawTechBook.language === ''
+							? 'english'
+							: rawTechBook.language,
+					idCode: rawTechBook.idCode,
 				};
 				_techBooks.push(techBook);
 			});
-console.log(rawTechBooks);
-console.log(_techBooks);
-		}
+			set((state) => {
+				const _state = { ...state };
+				_state.techBooks = _techBooks;
+				return _state;
+			});
+		},
 	})
 );
