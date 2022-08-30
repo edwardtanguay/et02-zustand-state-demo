@@ -12,7 +12,9 @@ export const InfoBox = () => {
 			</div>
 			<div className="row">
 				<label>Colors: </label>
-				<span className="theValue">{store.colors.map(color => color).join(', ')}</span>
+				<span className="theValue">
+					{store.colors.map((color) => color).join(', ')}
+				</span>
 			</div>
 			<div className="row">
 				<label>User is online: </label>
@@ -25,6 +27,14 @@ export const InfoBox = () => {
 				<span className="theValue">
 					{store.currentUserStatus.emailIsConfirmed ? 'yes' : 'no'}
 				</span>
+			</div>
+			<div className="row">
+				<label>Tech Books:</label>
+				<ul>
+					{store.techBooks.map((techBook, i) => {
+						return <li key={i}>{techBook.title}</li>;
+					})}
+				</ul>
 			</div>
 		</div>
 	);

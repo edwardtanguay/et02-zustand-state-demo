@@ -1,4 +1,14 @@
 import create from 'zustand';
+import axios from 'axios';
+
+const techBooksUrl = 'https://edwardtanguay.netlify.app/share/techBooks.json';
+
+interface ITechBook {
+	idCode: string;
+	title: string;
+	description: string;
+	language: string;
+}
 
 interface IStore {
 	message: string;
@@ -14,11 +24,11 @@ interface IStore {
 	};
 	toggleCurrentUserStatusOnline: () => void;
 	toggleCurrentUserStatusEmail: () => void;
+	techBooks: ITechBook[];
 }
 
 export const useStore = create<IStore>(
 	(set): IStore => ({
-
 		// STRING
 		message: 'test',
 		setMessage: (message: string) =>
@@ -66,17 +76,28 @@ export const useStore = create<IStore>(
 		toggleCurrentUserStatusOnline: () => {
 			set((state) => {
 				const _state = { ...state };
-				_state.currentUserStatus.isOnline = !_state.currentUserStatus.isOnline;
+				_state.currentUserStatus.isOnline =
+					!_state.currentUserStatus.isOnline;
 				return _state;
 			});
 		},
 		toggleCurrentUserStatusEmail: () => {
 			set((state) => {
 				const _state = { ...state };
-				_state.currentUserStatus.emailIsConfirmed = !_state.currentUserStatus.emailIsConfirmed;
+				_state.currentUserStatus.emailIsConfirmed =
+					!_state.currentUserStatus.emailIsConfirmed;
 				return _state;
 			});
-}
+		},
 
+		// API CALL
+		techBooks: [
+			{
+				title: 'ttt',
+				idCode: 'iii',
+				description: 'ddd',
+				language: 'lll'
+			}
+		],
 	})
 );
