@@ -95,7 +95,18 @@ export const useStore = create<IStore>(
 		techBooks: [],
 		loadTechBooks: async () => {
 			const rawTechBooks = (await axios.get(techBooksUrl)).data;
-			
+			const _techBooks: ITechBook[] = [];
+			rawTechBooks.forEach((rawTechBook: any) => {
+				const techBook: ITechBook = {
+					title: 'ttt',
+					description: 'ddd',
+					language: 'lll',
+					idCode: 'iii'
+				};
+				_techBooks.push(techBook);
+			});
+console.log(rawTechBooks);
+console.log(_techBooks);
 		}
 	})
 );
