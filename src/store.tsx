@@ -93,26 +93,28 @@ export const useStore = create<IStore>(
 
 		// API CALL
 		techBooks: [],
-		loadTechBooks: async () => {
-			const rawTechBooks = (await axios.get(techBooksUrl)).data;
-			const _techBooks: ITechBook[] = [];
-			rawTechBooks.forEach((rawTechBook: any) => {
-				const techBook: ITechBook = {
-					title: rawTechBook.title,
-					description: rawTechBook.description,
-					language:
-						rawTechBook.language === ''
-							? 'english'
-							: rawTechBook.language,
-					idCode: rawTechBook.idCode,
-				};
-				_techBooks.push(techBook);
-			});
-			set((state) => {
-				const _state = { ...state };
-				_state.techBooks = _techBooks;
-				return _state;
-			});
+		loadTechBooks: () => {
+			setTimeout(async () => {
+				const rawTechBooks = (await axios.get(techBooksUrl)).data;
+				const _techBooks: ITechBook[] = [];
+				rawTechBooks.forEach((rawTechBook: any) => {
+					const techBook: ITechBook = {
+						title: rawTechBook.title,
+						description: rawTechBook.description,
+						language:
+							rawTechBook.language === ''
+								? 'english'
+								: rawTechBook.language,
+						idCode: rawTechBook.idCode,
+					};
+					_techBooks.push(techBook);
+				});
+				set((state) => {
+					const _state = { ...state };
+					_state.techBooks = _techBooks;
+					return _state;
+				});
+			}, 3000);
 		},
 	})
 );
