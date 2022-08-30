@@ -18,6 +18,7 @@ interface IStore {
 
 export const useStore = create<IStore>(
 	(set): IStore => ({
+
 		// STRING
 		message: 'test',
 		setMessage: (message: string) =>
@@ -46,6 +47,8 @@ export const useStore = create<IStore>(
 				return _state;
 			});
 		},
+
+		// CHANGE MULTIPLE STATE VARIABLES
 		deleteVowelsAndRed: () => {
 			set((state) => {
 				const _state = { ...state };
@@ -54,6 +57,8 @@ export const useStore = create<IStore>(
 				return _state;
 			});
 		},
+
+		// OBJECT
 		currentUserStatus: {
 			isOnline: false,
 			emailIsConfirmed: true,
@@ -73,6 +78,5 @@ export const useStore = create<IStore>(
 			});
 }
 
-		// CHANGE MULTIPLE STATE VARIABLES
 	})
 );
