@@ -3,7 +3,8 @@ import create from 'zustand';
 interface IStore {
 	message: string;
 	setMessage: (message: string) => void;
-	colors: string[]
+	colors: string[];
+	addColor: (color: string) => void;
 }
 
 export const useStore = create<IStore>(
@@ -11,6 +12,13 @@ export const useStore = create<IStore>(
 		message: 'test',
 		setMessage: (message: string) =>
 			set((state) => ({ ...state, message })),
-		colors: ['blue', 'white', 'red', 'green', 'black', 'red']
+		colors: ['blue', 'white', 'red', 'green', 'black', 'red'],
+		addColor: (color: string) => {
+			set((state) => {
+				const _state = { ...state };
+				_state.colors.push(color);
+				return _state;
+			});
+		},
 	})
 );

@@ -21,7 +21,7 @@ function App() {
 
 					<div className="data">
 						<label>Colors:</label>
-						nnn
+						<button onClick={() => store.addColor('blue')}>blue</button>
 					</div>
 				</section>
 				<section className="dataArea">
