@@ -91,13 +91,6 @@ export const useStore = create<IStore>(
 		},
 
 		// API CALL
-		techBooks: [
-			{
-				title: 'ttt',
-				idCode: 'iii',
-				description: 'ddd',
-				language: 'lll'
-			}
-		],
+		techBooks: [],
 	})
 );
