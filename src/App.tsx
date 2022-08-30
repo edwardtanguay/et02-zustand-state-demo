@@ -40,7 +40,14 @@ function App() {
 
 					<div className="data">
 						<label>Change multiple values:</label>
-						<button onClick={() => store.deleteVowelsAndRed()}>Delete vowels and color red</button>
+						<button onClick={() => store.deleteVowelsAndRed()}>
+							Delete vowels and color red
+						</button>
+					</div>
+
+					<div className="data">
+						<button onClick={() => store.toggleCurrentUserStatusOnline()}>toggle online status</button>
+						<button>toggle email status</button>
 					</div>
 				</section>
 				<section className="dataArea">

@@ -14,6 +14,12 @@ export const InfoBox = () => {
 				<label>Colors: </label>
 				<span className="theValue">{store.colors.map(color => color).join(', ')}</span>
 			</div>
+			<div className="row">
+				<label>User is online: </label>
+				<span className="theValue">
+					{store.currentUserStatus.isOnline ? 'yes' : 'no'}
+				</span>
+			</div>
 		</div>
 	);
 };
