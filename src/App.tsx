@@ -21,7 +21,15 @@ function App() {
 
 					<div className="data">
 						<label>Colors:</label>
-						<button onClick={() => store.addColor('blue')}>blue</button>
+						<button onClick={() => store.addColor('blue')}>
+							blue
+						</button>
+						<button onClick={() => store.addColor('red')}>
+							red
+						</button>
+						<button onClick={() => store.addColor('yellow')}>
+							yellow
+						</button>
 					</div>
 				</section>
 				<section className="dataArea">
